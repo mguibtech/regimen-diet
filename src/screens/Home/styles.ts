@@ -5,12 +5,3 @@ export const Container = styled.View`
     background-color: ${({theme}) => theme.COLORS.GRAY_7};
     padding: 24px;
 `;
-
-// const styles = StyleSheet.create({
-//     container: {
-//       flex: 1,
-//       backgroundColor: '#fff',
-//       alignItems: 'center',
-//       justifyContent: 'center',
-//     },
-//   });
