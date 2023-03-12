@@ -15,7 +15,7 @@ export default {
         GRAY_5: '#DDDEDF',
         GRAY_6: '#DDDEDF',
         GRAY_7: '#FAFAFA',
-        WHITE: '##FFFFFF',
+        WHITE:  '#FFFFFF',
     },
     FONT_FAMILY: {
         REGULAR: 'Nunito_Sans400Regular',
