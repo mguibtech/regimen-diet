@@ -1,9 +1,5 @@
 import styled, {css} from "styled-components/native";
 
-
-
-
-
 export const Container = styled.View`
     flex: 1;
     background-color: ${({theme}) => theme.COLORS.GRAY_7};
@@ -26,4 +22,15 @@ export const User = styled.Image`
     /* width: 82px;
     height: 67px; */
 `;
+
+export const Text = styled.Text`
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.MD}px;
+        font-family: ${theme.FONT_FAMILY.REGULAR};
+        color: ${theme.COLORS.GRAY_1}
+    `}
+    font-weight:400;
+    margin-top: 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`
 

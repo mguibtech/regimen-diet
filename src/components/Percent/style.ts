@@ -1,6 +1,5 @@
-import styled, {css} from "styled-components/native";
-import {ArrowUpRight} from 'phosphor-react-native'
-import { MaterialIcons } from '@expo/vector-icons'
+import styled, { css } from "styled-components/native";
+import { Feather } from '@expo/vector-icons'
 
 export type PercenteTypeStyleProps = 'PRIMARY' | 'SECONDARY';
 
@@ -10,17 +9,16 @@ type Props = {
 
 export const Container = styled.View<Props>`
     width: 100%;
-    padding: 20px 16px;
+    padding: 8px 8px;
     margin-top: 33px;
-    position: relative;
+    align-items: flex-end;
+    /* position: relative; */
 
-    /* justify-content: center; */
-    /* align-items: center; */
-    gap: 2px;
+    /* gap: 2px; */
 
-    background-color: ${({theme, type}) => type === 'PRIMARY' ? theme.COLORS.GREEN_LIGHT: theme.COLORS.RED_LIGHT};
+    background: ${({ theme, type }) => type === 'PRIMARY' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 8);
     border-radius: 8px;
 `;
 
@@ -31,7 +29,9 @@ export const TitlePercenter = styled.Text`
         color: ${theme.COLORS.GRAY_1}
     `}
     font-weight: 700;
-    text-align:center; 
+    text-align:center;
+    align-self: stretch;
+    margin-top: -10px;
 `;
 
 export const InfoPercenter = styled.Text`
@@ -43,15 +43,10 @@ export const InfoPercenter = styled.Text`
     font-weight: 400;
     text-align:center;
     align-self: stretch;
+    margin-bottom: 12px
 `;
 
-export const IconInformation = styled(ArrowUpRight).attrs<Props>(({ theme, type }) => ({
+export const Icon = styled(Feather).attrs<Props>(({ theme, type }) => ({
     size: 24,
     color: type === 'PRIMARY' ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK
-  }))`
-    position: absolute;
-    margin-top: 8px;
-    display: flex;
-    margin-left: 330px;
-    align-items: flex-end;
-`;
+}))``;

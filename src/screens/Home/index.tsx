@@ -1,10 +1,9 @@
 import { Header } from '@components/Header';
-import { StyleSheet, Text, View } from 'react-native';
 import { 
   Container, 
   HeaderHome,  
   Logo, 
-
+  Text,
   User, 
 } from './styles';
 import logoImg from '@assets/logo.png';
@@ -22,7 +21,9 @@ export function Home() {
         <User  source={userImg}/>
       </HeaderHome>
 
-      <Percent type='SECONDARY'/>
+      <Percent icon='arrow-up-right' type='PRIMARY'/>
+
+      <Text>Refeições</Text>
     </Container>
   );
 }
