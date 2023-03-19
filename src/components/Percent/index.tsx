@@ -15,7 +15,6 @@ type Props = TouchableOpacityProps & {
 
 
 export function Percent({ type = 'PRIMARY', icon, ...rest  }: Props) {
-    console.log(type)
     return (
         <Container type={type}>
             <Icon

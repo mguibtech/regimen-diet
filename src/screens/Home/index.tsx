@@ -9,6 +9,7 @@ import {
 import logoImg from '@assets/logo.png';
 import userImg from '@assets/user.png'
 import { Percent } from '@components/Percent';
+import { Button } from '@components/Button';
 
 
 
@@ -24,6 +25,7 @@ export function Home() {
       <Percent icon='arrow-up-right' type='PRIMARY'/>
 
       <Text>Refeições</Text>
+      <Button title='Nova refeição' icon='add' type='PRIMARY'/>
     </Container>
   );
 }
