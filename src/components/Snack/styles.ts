@@ -28,6 +28,7 @@ export const Container = styled(TouchableOpacity)`
 
     border: 1px solid ${({theme}) => theme.COLORS.GRAY_5};
     border-radius: 6px;
+    margin-bottom: 6px;
 `;  
 
 export const TitleSnack = styled.Text.attrs({
@@ -55,4 +56,14 @@ export const Separator = styled.View`
     width: 0px;
     height: 14px;
     border: 1px solid ${({theme}) => theme.COLORS.GRAY_4};
+`;
+
+export const Status = styled.View<Props>`
+    width: 14px;
+    height: 14px;
+    background-color: ${({theme, type}) => type === 'PRIMARY' ? theme.COLORS.GREEN_MID
+        : theme.COLORS.RED_MID};
+
+    flex: none;
+    border-radius: 50px;
 `;
