@@ -58,7 +58,7 @@ export const Icon = styled(MaterialCommunityIcons).attrs<Props>(({ theme, type }
 export const GeneralStatistics = styled.View`
     flex: 1;
     padding: 24px;
-    background: ${({theme}) => theme.COLORS.WHITE};
+    background: ${({theme}) => theme.COLORS.GRAY_7};
     align-items: center;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
