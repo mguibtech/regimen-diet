@@ -4,6 +4,7 @@ import theme from './src/theme'
 import { ThemeProvider } from 'styled-components'
 import { StatusBar } from 'react-native';
 import { Loading } from '@components/Loading';
+import { Statistics } from '@screens/Statistics';
 
 
 export default function App() {
@@ -18,7 +19,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <Home/> : <Loading/>}
+      {fontsLoaded ? <Statistics/> : <Loading/>}
 
     </ThemeProvider>
   );
