@@ -11,7 +11,7 @@ export const Container = styled.View`
     width: 100%;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 12px;
     padding: 16px;
     border-radius: 8px;
     background: ${({ theme }) =>  theme.COLORS.GRAY_6};

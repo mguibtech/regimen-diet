@@ -71,4 +71,5 @@ export const TitleGeneralStatistics = styled.Text`
         color: ${theme.COLORS.GRAY_2};
     `}
     font-weight: 700;    
+    margin-bottom: 10px;
 `;
