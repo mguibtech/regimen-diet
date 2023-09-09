@@ -1,3 +1,6 @@
+import { SafeAreaConsumer } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 import styled, { css } from "styled-components/native";
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
@@ -7,7 +10,7 @@ type Props = {
     type: CollorHeaderTypeStyleProps
 }
 
-export const Container = styled.View<Props>`
+export const Container = styled(SafeAreaView)<Props>`
     flex: 1;
     /* padding: 24px; */
     background: ${({ theme, type }) => type === 'PRIMARY' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};

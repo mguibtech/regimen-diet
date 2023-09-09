@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons'
 type Props = TouchableOpacityProps & {
     title: string;
     type?: ButtonIconTypeStyleProps;
-    icon: keyof typeof MaterialIcons.glyphMap;
+    icon?: keyof typeof MaterialIcons.glyphMap;
 }
 
 export function Button({ icon, title, type = 'PRIMARY', ...rest }: Props) {

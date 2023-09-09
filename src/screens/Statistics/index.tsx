@@ -25,7 +25,7 @@ export function Statistics({ type = 'PRIMARY' }: Props) {
         <Container type={type}>
             <HeaderStatistics >
                 <Icon name='arrow-left' type={type} />
-                <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+                <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', marginTop:  2}}>
                     <Title>90,86%</Title>
                     <SubTitle>das refeições dentro da dieta</SubTitle>
                 </View>

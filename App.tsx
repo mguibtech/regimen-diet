@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import { StatusBar } from 'react-native';
 import { Loading } from '@components/Loading';
 import { Statistics } from '@screens/Statistics';
+import { NewMeal } from '@screens/NewMeal';
 
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <Statistics/> : <Loading/>}
+      {fontsLoaded ? <NewMeal/> : <Loading/>}
 
     </ThemeProvider>
   );
