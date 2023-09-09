@@ -6,6 +6,8 @@ import { StatusBar } from 'react-native';
 import { Loading } from '@components/Loading';
 import { Statistics } from '@screens/Statistics';
 import { NewMeal } from '@screens/NewMeal';
+import { DietSuccessScreen } from '@screens/DietSuccessScreen';
+import { DietFailureScreen } from '@screens/DietFailureScreen';
 
 
 export default function App() {
@@ -20,7 +22,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <NewMeal/> : <Loading/>}
+      {fontsLoaded ? <DietFailureScreen/> : <Loading/>}
 
     </ThemeProvider>
   );
