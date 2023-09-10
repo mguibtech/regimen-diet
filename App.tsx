@@ -8,6 +8,7 @@ import { Statistics } from '@screens/Statistics';
 import { NewMeal } from '@screens/NewMeal';
 import { DietSuccessScreen } from '@screens/DietSuccessScreen';
 import { DietFailureScreen } from '@screens/DietFailureScreen';
+import { DietDetails } from '@screens/DietDetails';
 
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <DietFailureScreen/> : <Loading/>}
+      {fontsLoaded ? <DietDetails/> : <Loading/>}
 
     </ThemeProvider>
   );
