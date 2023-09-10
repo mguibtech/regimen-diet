@@ -11,7 +11,6 @@ type Props = {
 
 export const Container = styled(SafeAreaView) <Props>`
   flex: 1;
-
   background: ${({ theme, type }) => type === 'PRIMARY' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
 `;
 

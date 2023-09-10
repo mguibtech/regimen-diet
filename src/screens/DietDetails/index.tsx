@@ -1,4 +1,4 @@
-
+import { useState } from 'react'
 import { Button } from "@components/Button";
 import {
     Container,
@@ -14,6 +14,7 @@ import {
 } from "./styles";
 
 import { View, Text } from 'react-native'
+import { ModalDelete } from '@components/ModalDelete';
 
 
 type Props = {
@@ -21,6 +22,17 @@ type Props = {
 }
 
 export function DietDetails({ type = 'SECONDARY' }: Props) {
+
+    const [showAppOptions, setShowAppOptions] = useState(true);
+
+    function handleCloseModalDelete(){
+        setShowAppOptions(false);
+    }
+
+    function handleOpenModalDelete(){
+        setShowAppOptions(true);
+    }
+
     return (
         <Container type={type}>
             <Header>
@@ -44,7 +56,7 @@ export function DietDetails({ type = 'SECONDARY' }: Props) {
                     12/08/2022 às 20:00
                 </TextDescription>
 
-                <View style={{ flex: 1 , marginTop: 24}}>
+                <View style={{ flex: 1, marginTop: 24 }}>
                     <View style={{
                         paddingHorizontal: 16,
                         paddingVertical: 6,
@@ -56,12 +68,12 @@ export function DietDetails({ type = 'SECONDARY' }: Props) {
                         flexDirection: "row",
                         gap: 8
                     }}>
-                        <Status type={type}/>
+                        <Status type={type} />
                         <Text>fora da dieta</Text>
                     </View>
                 </View>
 
-                <View style={{ gap: 9 }}>
+                <View style={{ gap: 9, marginBottom: 100 }}>
                     <Button
                         title="Eidtar refeição"
                         icon="mode-edit"
@@ -71,9 +83,13 @@ export function DietDetails({ type = 'SECONDARY' }: Props) {
                         title="Excluir refeição"
                         icon="delete"
                         type="SECONDARY"
+                        onPress={handleOpenModalDelete}
                     />
                 </View>
             </Body>
+            {
+                showAppOptions ? <ModalDelete handleClose={handleCloseModalDelete} visible={showAppOptions} /> : <View />
+            }
         </Container>
     )
 }
