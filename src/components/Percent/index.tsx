@@ -5,23 +5,27 @@ import {
     TitlePercenter,
     Icon
 } from "./style";
-import { TouchableOpacityProps } from 'react-native';
-import {Feather} from '@expo/vector-icons'
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { Feather } from '@expo/vector-icons'
 
 type Props = TouchableOpacityProps & {
     icon: keyof typeof Feather.glyphMap;
-    type? : PercenteTypeStyleProps;
-  }
+    type?: PercenteTypeStyleProps;
+    action: () => void;
+}
 
 
-export function Percent({ type = 'PRIMARY', icon, ...rest  }: Props) {
+export function Percent({ type = 'PRIMARY', icon, action, ...rest }: Props) {
     return (
         <Container type={type}>
-            <Icon
-                name={icon}
-                type={type} />
+            <TouchableOpacity onPress={action}>
+                <Icon
+                    name={icon}
+                    type={type} />
+            </TouchableOpacity>
+
             <TitlePercenter>90,86%</TitlePercenter>
-            <InfoPercenter>das refeições dento da dieta</InfoPercenter>            
+            <InfoPercenter>das refeições dento da dieta</InfoPercenter>
         </Container>
     )
 }

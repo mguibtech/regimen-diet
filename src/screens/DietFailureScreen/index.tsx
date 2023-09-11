@@ -3,10 +3,18 @@ import { Container, TextDescription, TextDescriptionBold, TextTitle } from "./st
 import { View } from "react-native";
 import { Button } from "@components/Button";
 
+import { useNavigation } from '@react-navigation/native'
+
 import ImgSuccess from '@assets/failureImg.png'
 
 
 export function DietFailureScreen(){
+    const navigation = useNavigation()
+
+    function handleGoHome() {
+        navigation.navigate('home')
+    }
+    
     return (
         <Container>
             <TextTitle>Que pena!</TextTitle>
@@ -20,6 +28,7 @@ export function DietFailureScreen(){
             <View style={{width: '60%'}}>
                 <Button
                     title="Ir a página inicial"
+                    onPress={handleGoHome}
                 />
             </View>
 

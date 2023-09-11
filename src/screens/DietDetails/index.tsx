@@ -18,7 +18,7 @@ import { ModalDelete } from '@components/ModalDelete';
 
 
 type Props = {
-    type: TypeStyleProps
+    type?: TypeStyleProps
 }
 
 export function DietDetails({ type = 'SECONDARY' }: Props) {

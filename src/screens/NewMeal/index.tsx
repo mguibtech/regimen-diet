@@ -14,10 +14,13 @@ import {
     QuestionDiet,
 
 } from "./styles";
-import { TextInput, View } from "react-native";
+import { TextInput, View, TouchableOpacity } from "react-native";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Text } from 'react-native';
 import { ButtonQuestion } from '@components/ButtonQuestion';
+
+import { useNavigation } from '@react-navigation/native'
+
 
 export function NewMeal() {
 
@@ -26,6 +29,14 @@ export function NewMeal() {
     const [show, setShow] = useState(false);
     const [actviteStatus, setActviteStatus] = useState(false);
     const [actviteStatusN, setActviteStatusN] = useState(false);
+
+    const navigation = useNavigation()
+
+    const handleDateChange = (event, selectedDate) => {
+        const currentDate = selectedDate || date;
+        setShow(Platform.OS === 'ios');
+        setDate(currentDate);
+    };
 
 
     const onChange = (event, selectedDate) => {
@@ -59,12 +70,25 @@ export function NewMeal() {
         }
     }
 
+    function hangleGoBack() {
+        navigation.goBack()
+    }
+
+    function handleGoStatusDiet(){
+        if(actviteStatus){
+            navigation.navigate('successDiet')
+        } else{
+            navigation.navigate('failureDiet')
+        }
+    }
 
 
     return (
         <Container>
             <Header>
-                <Icon name='arrow-left' />
+                <TouchableOpacity onPress={hangleGoBack}>
+                    <Icon name='arrow-left' />
+                </TouchableOpacity>
                 <Title>Nova refeição</Title>
             </Header>
 
@@ -124,6 +148,7 @@ export function NewMeal() {
 
                 <Button
                     title='Cadastrar refeição'
+                    onPress={handleGoStatusDiet}
                 />
             </Body>
 

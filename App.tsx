@@ -9,6 +9,8 @@ import { NewMeal } from '@screens/NewMeal';
 import { DietSuccessScreen } from '@screens/DietSuccessScreen';
 import { DietFailureScreen } from '@screens/DietFailureScreen';
 import { DietDetails } from '@screens/DietDetails';
+import { AppRoutes } from '@routes/app.routes';
+import { Routes } from '@routes/index';
 
 
 export default function App() {
@@ -23,7 +25,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <DietDetails/> : <Loading/>}
+      {fontsLoaded ? <Routes/> : <Loading/>}
 
     </ThemeProvider>
   );

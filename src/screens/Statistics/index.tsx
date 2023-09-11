@@ -1,6 +1,7 @@
 import { Panel } from '@components/Panel';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-import { TouchableOpacityProps, View } from 'react-native';
+import { TouchableOpacityProps, View, TouchableOpacity } from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native'
 
 import {
     Container,
@@ -21,11 +22,24 @@ type Props = TouchableOpacityProps & {
 }
 
 export function Statistics({ type = 'PRIMARY' }: Props) {
+    const navigation = useNavigation()
+
+    const route = useRoute()
+
+    function hanleGoBackHome() {
+        navigation.navigate('home')
+    }
+
+    
+
+
     return (
         <Container type={type}>
             <HeaderStatistics >
-                <Icon name='arrow-left' type={type} />
-                <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', marginTop:  2}}>
+                <TouchableOpacity onPress={hanleGoBackHome}>
+                    <Icon name='arrow-left' type={type} />
+                </TouchableOpacity>
+                <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', marginTop: 2 }}>
                     <Title>90,86%</Title>
                     <SubTitle>das refeições dentro da dieta</SubTitle>
                 </View>
@@ -42,7 +56,7 @@ export function Statistics({ type = 'PRIMARY' }: Props) {
                     value='109'
                     message='refeições registradas'
                 />
-                <View style={{ width: '100%', alignItems: 'flex-start', paddingTop:12,  justifyContent: 'space-between', flexDirection: 'row', gap: 12 }}>
+                <View style={{ width: '100%', alignItems: 'flex-start', paddingTop: 12, justifyContent: 'space-between', flexDirection: 'row', gap: 12 }}>
                     <Meals
                         value='99'
                         message='refeições dentro da dieta'
